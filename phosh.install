@@ -1,0 +1,15 @@
+post_install() {
+  mkdir -p "/usr/share/lightdm/lightdm.conf.d"
+  cat >"/usr/share/lightdm/lightdm.conf.d/50-lightdm-autologin.conf" <<EOF
+[Seat:*]
+autologin-user=alarm
+autologin-user-timeout=0
+EOF
+  groupadd -r autologin
+  gpasswd -a alarm autologin
+  systemctl enable lightdm
+
+  systemctl enable ModemManager
+  systemctl enable phosh
+  systemctl enable zswap-arm
+}
