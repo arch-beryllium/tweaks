@@ -1,6 +1,6 @@
 pkgname=(tweaks-phosh tweaks-plasma-mobile tweaks-lomiri tweaks-desktop-files)
 pkgbase=tweaks
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 arch=(any)
 license=(Unlicense)
@@ -29,7 +29,7 @@ package_tweaks-desktop-files() {
 }
 
 package_tweaks-phosh() {
-  depends=(lightdm modemmanager phosh zswap-arm)
+  depends=(modemmanager phosh zswap-arm)
   install=phosh.install
 }
 package_tweaks-plasma-mobile() {
