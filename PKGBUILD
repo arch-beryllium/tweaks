@@ -1,10 +1,11 @@
 pkgname=(tweaks-phosh tweaks-plasma-mobile tweaks-lomiri tweaks-desktop-files)
 pkgbase=tweaks
-pkgver=0.2
-pkgrel=2
+pkgver=0.3
+pkgrel=1
 arch=(any)
 license=(Unlicense)
 source=(desktop-files.sh
+        osk-wayland
         avahi-discover.desktop
         bssh.desktop
         bvnc.desktop
@@ -18,6 +19,7 @@ source=(desktop-files.sh
         xgps.desktop
         xgpsspeed.desktop)
 sha256sums=('ec179d4e0ab7cb473f95d77d553a00c8fa056bd80c3080eea1e044a5b1ae5287'
+            '25ed5a35cd3faa2a3385266e937ad3a38ab1b549aebc386894ff91bf93c6b776'
             'ace41d2fc2969fdee0d6e820ff5ed863c5977aaa60c0eeb072ff46b5ea26a3ea'
             '959d5fc49c3b6d3b18dc87083f300d34824e027cb7b11cc63061b80088abfe04'
             'f8554e9c68338e94e15cee9de48b35281cb08be2ddf517548a65b485006af3cc'
@@ -41,6 +43,7 @@ package_tweaks-desktop-files() {
 package_tweaks-phosh() {
   depends=(modemmanager phosh zswap-arm)
   install=phosh.install
+  install -Dm755 "$srcdir"/osk-wayland "$pkgdir"/usr/bin/osk-wayland
 }
 package_tweaks-plasma-mobile() {
   depends=(sddm modemmanager tlp zswap-arm kscreen)
