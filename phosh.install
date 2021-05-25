@@ -1,4 +1,6 @@
 post_install() {
+  sed -i "s/scale = 2/scale = 2.68/g" /usr/share/phosh/phoc.ini
+
   systemctl enable ModemManager
   systemctl enable phosh
   systemctl enable zswap-arm
