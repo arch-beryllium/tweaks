@@ -17,5 +17,4 @@ kscreen-doctor output.1.scale.2.5
 rm /home/alarm/.config/autostart-scripts/initial-scale.sh
 EOF
   chmod a+x /home/alarm/.config/autostart-scripts/initial-scale.sh
-  chown alarm:alarm /home/alarm/.config/autostart-scripts /home/alarm/.config/autostart-scripts/initial-scale.sh
 }
